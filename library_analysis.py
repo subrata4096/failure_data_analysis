@@ -2,7 +2,7 @@
 import sys
 import os
 from collections import *
-from Levenshtein import *
+#from Levenshtein import *
 import hashlib
 
 class libListFileInfo:
