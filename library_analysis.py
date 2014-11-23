@@ -3,6 +3,7 @@ import sys
 import os
 from collections import *
 from Levenshtein import *
+import hashlib
 
 class libListFileInfo:
 	liblistKey = ""
@@ -38,7 +39,10 @@ def getLibKey(fileName):
 	 lines.sort()
       	 libkey = ','.join(lines)
 	 #print libkey
-	 return libkey
+	 hash_object = hashlib.md5(libkey.encode())
+	 hashkey = hash_object.hexdigest()
+	 hashkeyStr = str(hashkey)
+	 return hashkey
 	 
          
 def makeLibListKey(fileName):
